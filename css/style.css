@@ -20,3 +20,11 @@ body {
 .task-card:hover {
   cursor: grab;
 }
+
+.second-add-task {
+  display: flex;
+  background-color: green;
+  color: white;
+  
+
+}
