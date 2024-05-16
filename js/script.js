@@ -8,6 +8,7 @@ const inprogressEl =$('#in-progress');
 const doneEl =$('#done');
 const secAddTaskEL = $('.second-add-task');
 
+
 function generateTaskId() {  
   const id = Math.floor(Math.random() * 1000000);
 
@@ -16,12 +17,13 @@ function generateTaskId() {
 
 // Todo: create a function to create a task card
 function createTaskCard(task) {
-  const cardContainer = $('<div>').addClass('card')
+  const cardContainer = $('<div>').addClass('card draggable my-3')
   const cardBody = $('<div>').addClass('card-body')
   const cardTitle = $('<h5>').addClass('card-title')
   const cardDate = $('<p>').addClass('card-text')
   const cardDes = $('<p>').addClass('card-text')
   const delBtn = $('<button>').addClass('btn btn-danger').text('delete')
+ 
 console.log(task)
   cardTitle.append(task.title)
   cardDate.append(task.date)
@@ -41,6 +43,7 @@ $( function() {
   $( "#draggable" ).draggable();
 } );
 function renderTaskList() {
+  
 
 }
 
@@ -66,6 +69,14 @@ function handleAddTask(event){
   }
   // console.log(title, date, taskDe)
   createTaskCard(task)
+  // const tasks = readTasksFromStorage();
+  // tasks.push(task)
+
+  // saveTasksToStorage(tasks);
+
+  // todoEl.val('');
+  // inprogressEl.val('');
+  // doneEl.val('')
 
 
 }
@@ -73,26 +84,54 @@ function handleAddTask(event){
 // Todo: create a function to handle deleting a task
 
 function handleDeleteTask(event){
+  event.preventDefault()
+  
+  
 
 }
 
 // Todo: create a function to handle dropping a task into a new status lane
 function handleDrop(event, ui) {
+  // const tasks = readTasksFromStorage()
+  // let dropTarget = event.target.id;
+  // let taskid = ui.draggable.data('text')
 
 }
 
 // Todo: when the page loads, render the task list, add event listeners, make lanes droppable, and make the due date field a date picker
 $(document).ready(function () {
   secAddTaskEL.on('click',handleAddTask)
-  
+ 
 $(function () {
     $('#datepicker').datepicker({
       changeMonth: true,
       changeYear: true,
     });
   });
-});
+ 
+  $('.close').click(function(){
+    $('#formModal').hide()
+    return 
+  })
 
+
+
+});
+// $('.lane').droppable({
+//   accept: '.draggable',
+//   drop: handleDrop
+// })
+// $( function() {
+//   $( "#draggable" ).draggable();
+//   $( "#droppable" ).droppable({
+//     drop: function( event, ui ) {
+//       $( this )
+//         .addClass( 'card draggable my-3' )
+//         .find( "card-title mb-1" )
+          
+//     }
+//   });
+// } );
 
   
   // const printtask = function (task, date) {
