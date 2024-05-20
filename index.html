@@ -35,13 +35,13 @@
             </button>
           </div>
           <div class="modal-body">
-            <form>
+            <form id="taskform">
               <div class="form-group">
                 <label for="task-title" class="col-form-label">Task Title:</label>
                 <input type="text" class="form-control" id="task-title">
               </div>
               <div class="form-group">
-                <label for="date" class="col-form-label">Task Due Date</label>
+                <label for="datepicker" class="col-form-label">Task Due Date</label>
                 <input type="text" class="col-form-label" id="datepicker" name="date" autocomplete="off">
               </div>
               <div class="form-group">
@@ -51,14 +51,25 @@
             
           </div>
           <div class="modal-footer">
-            <button type="button" class="second-add-task " data-dismiss="modal">Add Task</button>
+            <button type="submit" class="second-add-task " data-bs-dismiss="modal">Add Task</button>
             
           </div>
+
+
+
+
         </form>
         </div>
       
       </div>
     </div>
+
+
+
+
+
+
+
 
     <!-- <div id="dialog" title="Basic dialog">
       <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
@@ -72,7 +83,7 @@
           <div class="card-header bg-white">
             <h2 class="card-title mb-1">To Do</h2>
           </div>
-          <div class="card-body bg-light">
+          <div class="card-body bg-light droppable ui-widget-header">
             <div id="todo-cards"></div>
           </div>
         </div>
@@ -82,7 +93,7 @@
           <div class="card-header bg-white">
             <h2 class="card-title mb-1">In Progress</h2>
           </div>
-          <div class="card-body bg-light">
+          <div class="card-body bg-light droppable ui-widget-header">
             <div id="in-progress-cards"></div>
           </div>
         </div>
@@ -92,7 +103,7 @@
             <div class="card-header bg-white">
               <h2 class="card-title mb-1">Done</h2>
             </div>
-            <div class="card-body bg-light">
+            <div class="card-body bg-light droppable ui-widget-header">
               <div id="done-cards"></div>
           </div>
           </div>
